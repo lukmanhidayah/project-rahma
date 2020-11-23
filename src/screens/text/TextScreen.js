@@ -50,7 +50,7 @@ export class TextScreen extends PureComponent {
   renderTextBlocks = () => (
     <View style={styles.facesContainer} pointerEvents="none">
       {this.state.textBlocks.map((res) => {
-        console.log(res.bounds.origin.x, this.state.measurements.x);
+        console.log(res.bounds, this.state.measurements.x);
         if (
           res.bounds.origin.x >= this.state.measurements.x &&
           res.bounds.origin.y >= this.state.measurements.y

@@ -11,6 +11,7 @@ import StackNavigator from "./StackNavigator";
 import HomeNavigator from "./home/HomeNavigator";
 import FingerNavigator from "./finger/FingerNavigator";
 import TextNavigator from "./text/TextNavigator";
+import UploadNavigator from "./upload/UploadNavigator";
 
 //instantiation createStackNavigator
 const Main = createStackNavigator();
@@ -22,6 +23,7 @@ const RootNavigator = () => {
         <Main.Screen name="Home" component={HomeNavigator} />
         <Main.Screen name="Finger" component={FingerNavigator} />
         <Main.Screen name="Text" component={TextNavigator} />
+        <Main.Screen name="Upload" component={UploadNavigator} />
       </StackNavigator>
     </NavigationContainer>
   );

@@ -59,6 +59,25 @@ const HomeScreen = (props) => {
           </View>
         </View>
       </CustomButton>
+      <CustomButton
+        onPress={() => {
+          props.navigation.navigate("Upload");
+        }}
+      >
+        <View style={styles.buttonContainer}>
+          <View style={styles.cardIconContainer}>
+            <MaterialCommunityIcons
+              name="camera-enhance-outline"
+              size={30}
+              color="black"
+            />
+          </View>
+          <View style={styles.cardTextContainer}>
+            <Text style={styles.title}>Upload image</Text>
+            <Text>Don't forget to send your friend number</Text>
+          </View>
+        </View>
+      </CustomButton>
     </CustomSafeArea>
   );
 };
@@ -72,7 +91,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     padding: 15,
     borderRadius: 5,
-    marginBottom: 10,
+    marginBottom: 20,
     flexDirection: "row",
     alignItems: "center",
     width: "100%",
@@ -99,5 +118,6 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 18,
+    color:'black'
   },
 });
