@@ -25,11 +25,7 @@ const HomeScreen = (props) => {
           </View>
         </View>
       </CustomButton>
-      <CustomButton
-        onPress={() => {
-          props.navigation.navigate("Finger");
-        }}
-      >
+      <CustomButton onPress={() => {}}>
         <View style={styles.buttonContainer}>
           <View style={styles.cardIconContainer}>
             <MaterialCommunityIcons
@@ -46,7 +42,7 @@ const HomeScreen = (props) => {
       </CustomButton>
       <CustomButton
         onPress={() => {
-          props.navigation.navigate("Finger");
+          props.navigation.navigate("Text");
         }}
       >
         <View style={styles.buttonContainer}>
@@ -98,7 +94,7 @@ const styles = StyleSheet.create({
   },
   cardTextContainer: {
     width: "70%",
-    paddingLeft: "5%"
+    paddingLeft: "5%",
   },
   title: {
     fontWeight: "bold",

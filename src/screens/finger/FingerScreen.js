@@ -3,6 +3,8 @@ import { StyleSheet, Text, View, ToastAndroid } from "react-native";
 import * as LocalAuthentication from "expo-local-authentication";
 import CustomSafeArea from "../../components/commons/CustomSafeArea";
 
+let unSubscribeLocalAuthentication;
+
 export default function FingerScreen() {
   const [attempt, setAttempt] = useState(0);
 
@@ -20,7 +22,7 @@ export default function FingerScreen() {
     if (!detectHardware() && !checkBiometric()) {
       alert("Your phone does not support this feature");
     } else {
-      LocalAuthentication.authenticateAsync({
+      unSubscribeLocalAuthentication =LocalAuthentication.authenticateAsync({
         promptMessage: "Finger Authentication",
         cancelLabel: "cancel",
       })
@@ -38,6 +40,11 @@ export default function FingerScreen() {
         .catch((err) => {
           console.log(err);
         });
+    }
+    return () => {
+      if(unSubscribeLocalAuthentication){
+        unSubscribeLocalAuthentication
+      }
     }
   }, [detectHardware, checkBiometric]);
 

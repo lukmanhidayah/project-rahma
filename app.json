@@ -17,13 +17,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.project.rahma",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      }
+        "backgroundColor": "#FFFFFF",
+        "package": "com.project.rahma",
+        "versionCode": 1
+      },
+      "package": "com.project.rahma"
     },
     "web": {
       "favicon": "./assets/favicon.png"

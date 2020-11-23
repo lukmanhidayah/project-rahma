@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import {
   Platform,
   TouchableOpacity,
@@ -6,10 +6,12 @@ import {
 } from "react-native";
 
 const CustomButton = ({ children, onPress }) => {
-  const MyButton =
-    Platform.OS == "android" && Platform.Version >= 21
+  const MyButton = useMemo(() => {
+    return Platform.OS == "android" && Platform.Version >= 21
       ? TouchableNativeFeedback
       : TouchableOpacity;
+  }, []);
+
   return (
     <MyButton useForeground={true} onPress={onPress}>
       {children}

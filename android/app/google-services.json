@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1028698618364",
+    "firebase_url": "https://authontefication.firebaseio.com",
+    "project_id": "authontefication",
+    "storage_bucket": "authontefication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028698618364:android:5f9decdf6ddf3332d9da79",
+        "android_client_info": {
+          "package_name": "com.project.rahma"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028698618364-kqibgrobgt2ifak3de7f42kguhluupu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9w-h5ak4hCDl4pDpoYQ2UZmT0kB_8TM0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028698618364-kqibgrobgt2ifak3de7f42kguhluupu4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
