@@ -12,6 +12,7 @@ import HomeNavigator from "./home/HomeNavigator";
 import FingerNavigator from "./finger/FingerNavigator";
 import TextNavigator from "./text/TextNavigator";
 import UploadNavigator from "./upload/UploadNavigator";
+import DigiSignNavigator from "./digisign/DigiSignNavigator";
 
 //instantiation createStackNavigator
 const Main = createStackNavigator();
@@ -24,6 +25,7 @@ const RootNavigator = () => {
         <Main.Screen name="Finger" component={FingerNavigator} />
         <Main.Screen name="Text" component={TextNavigator} />
         <Main.Screen name="Upload" component={UploadNavigator} />
+        <Main.Screen name="DigiSign" component={DigiSignNavigator} />
       </StackNavigator>
     </NavigationContainer>
   );

@@ -10,25 +10,25 @@ import {
 import StackNavigator from "../StackNavigator";
 
 //instantiation stack navigation
-const Upload = createStackNavigator();
+const DigiSign = createStackNavigator();
 
 //screen
-import UploadScreen from "../../screens/upload/UploadScreen";
+import DigiSignScreen from "../../screens/digisign/DigiSignScreen";
 
 //main
-const UploadNavigator = () => {
+const DigiSignNavigator = () => {
   return (
     <StackNavigator
-      initialRouteName="Upload"
+      initialRouteName="DigiSign"
       screenOptions={{
         headerShown: false,
         cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
         animationEnabled: true,
       }}
     >
-      <Upload.Screen
-        name="Upload"
-        component={UploadScreen}
+      <DigiSign.Screen
+        name="DigiSign"
+        component={DigiSignScreen}
         options={{
           headerShown: true,
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
@@ -38,4 +38,4 @@ const UploadNavigator = () => {
   );
 };
 
-export default UploadNavigator;
+export default DigiSignNavigator;

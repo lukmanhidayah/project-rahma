@@ -1,7 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
-import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  Ionicons,
+  MaterialCommunityIcons,
+  FontAwesome5,
+} from "@expo/vector-icons";
 
 import CustomButton from "../../components/commons/CustomButton";
 import CustomSafeArea from "../../components/commons/CustomSafeArea";
@@ -78,6 +82,21 @@ const HomeScreen = (props) => {
           </View>
         </View>
       </CustomButton>
+      <CustomButton
+        onPress={() => {
+          props.navigation.navigate("DigiSign");
+        }}
+      >
+        <View style={styles.buttonContainer}>
+          <View style={styles.cardIconContainer}>
+            <FontAwesome5 name="signature" size={30} color="black" />
+          </View>
+          <View style={styles.cardTextContainer}>
+            <Text style={styles.title}>Digital Signature</Text>
+            <Text>I don't know the best practice to use this feature</Text>
+          </View>
+        </View>
+      </CustomButton>
     </CustomSafeArea>
   );
 };
@@ -118,6 +137,6 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
     fontSize: 18,
-    color:'black'
+    color: "black",
   },
 });

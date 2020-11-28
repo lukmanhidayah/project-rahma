@@ -30,7 +30,7 @@ const UploadScreen = () => {
     })();
   }, []);
 
-  const pickImage = async () => {
+  const pickImage = useCallback(async () => {
     try {
       closeModal();
       let result = await ImagePicker.launchImageLibraryAsync({
@@ -45,9 +45,9 @@ const UploadScreen = () => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, []);
 
-  const snapImage = async () => {
+  const snapImage = useCallback(async () => {
     try {
       closeModal();
       let result = await ImagePicker.launchCameraAsync({
@@ -62,7 +62,7 @@ const UploadScreen = () => {
     } catch (err) {
       console.log(err);
     }
-  };
+  }, []);
 
   const showModal = useCallback(() => {
     setModalVisible(true);
