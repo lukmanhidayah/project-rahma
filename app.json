@@ -28,7 +28,12 @@
         "package": "com.project.rahma",
         "versionCode": 1
       },
-      "package": "com.project.rahma"
+      "package": "com.project.rahma",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBcVl7JXj7ssZDJ7HHwxTyoczjkIdfXq_s"
+        }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"

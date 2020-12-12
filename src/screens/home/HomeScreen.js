@@ -5,6 +5,7 @@ import {
   Ionicons,
   MaterialCommunityIcons,
   FontAwesome5,
+  Feather
 } from "@expo/vector-icons";
 
 import CustomButton from "../../components/commons/CustomButton";
@@ -94,6 +95,21 @@ const HomeScreen = (props) => {
           <View style={styles.cardTextContainer}>
             <Text style={styles.title}>Digital Signature</Text>
             <Text>I don't know the best practice to use this feature</Text>
+          </View>
+        </View>
+      </CustomButton>
+      <CustomButton
+        onPress={() => {
+          props.navigation.navigate("Maps");
+        }}
+      >
+        <View style={styles.buttonContainer}>
+          <View style={styles.cardIconContainer}>
+            <Feather name="map-pin" size={30} color="black" />
+          </View>
+          <View style={styles.cardTextContainer}>
+            <Text style={styles.title}>Maps</Text>
+            <Text>Linking to google maps or apple maps</Text>
           </View>
         </View>
       </CustomButton>
