@@ -14,6 +14,7 @@ import TextNavigator from "./text/TextNavigator";
 import UploadNavigator from "./upload/UploadNavigator";
 import DigiSignNavigator from "./digisign/DigiSignNavigator";
 import MapsNavigator from "./maps/MapsNavigator";
+import PdfNavigator from "./pdf/PdfNavigator";
 
 //instantiation createStackNavigator
 const Main = createStackNavigator();
@@ -28,6 +29,7 @@ const RootNavigator = () => {
         <Main.Screen name="Upload" component={UploadNavigator} />
         <Main.Screen name="DigiSign" component={DigiSignNavigator} />
         <Main.Screen name="Maps" component={MapsNavigator} />
+        <Main.Screen name="Pdf" component={PdfNavigator} />
       </StackNavigator>
     </NavigationContainer>
   );

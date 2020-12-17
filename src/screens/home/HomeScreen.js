@@ -1,11 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import {
   Ionicons,
   MaterialCommunityIcons,
   FontAwesome5,
-  Feather
+  Feather,
 } from "@expo/vector-icons";
 
 import CustomButton from "../../components/commons/CustomButton";
@@ -13,106 +13,127 @@ import CustomSafeArea from "../../components/commons/CustomSafeArea";
 
 const HomeScreen = (props) => {
   return (
-    <CustomSafeArea style={styles.screen}>
+    <CustomSafeArea>
       <StatusBar style="auto" translucent={false} backgroundColor="#ccc" />
-      <CustomButton
-        onPress={() => {
-          props.navigation.navigate("Finger");
-        }}
-      >
-        <View style={styles.buttonContainer}>
-          <View style={styles.cardIconContainer}>
-            <Ionicons name="ios-finger-print" size={30} color="black" />
+      <ScrollView style={styles.scrollView}>
+        <CustomButton
+          onPress={() => {
+            props.navigation.navigate("Finger");
+          }}
+        >
+          <View style={styles.buttonContainer}>
+            <View style={styles.cardIconContainer}>
+              <Ionicons name="ios-finger-print" size={30} color="black" />
+            </View>
+            <View style={styles.cardTextContainer}>
+              <Text style={styles.title}>Finger</Text>
+              <Text>Make sure your finger is clean</Text>
+            </View>
           </View>
-          <View style={styles.cardTextContainer}>
-            <Text style={styles.title}>Finger</Text>
-            <Text>Make sure your finger is clean</Text>
+        </CustomButton>
+        <CustomButton onPress={() => {}}>
+          <View style={styles.buttonContainer}>
+            <View style={styles.cardIconContainer}>
+              <MaterialCommunityIcons
+                name="face-recognition"
+                size={30}
+                color="black"
+              />
+            </View>
+            <View style={styles.cardTextContainer}>
+              <Text style={styles.title}>Face Detection</Text>
+              <Text>Maybe your face not allegeable</Text>
+            </View>
           </View>
-        </View>
-      </CustomButton>
-      <CustomButton onPress={() => {}}>
-        <View style={styles.buttonContainer}>
-          <View style={styles.cardIconContainer}>
-            <MaterialCommunityIcons
-              name="face-recognition"
-              size={30}
-              color="black"
-            />
+        </CustomButton>
+        <CustomButton
+          onPress={() => {
+            props.navigation.navigate("Text");
+          }}
+        >
+          <View style={styles.buttonContainer}>
+            <View style={styles.cardIconContainer}>
+              <MaterialCommunityIcons
+                name="text-subject"
+                size={30}
+                color="black"
+              />
+            </View>
+            <View style={styles.cardTextContainer}>
+              <Text style={styles.title}>Text Detection</Text>
+              <Text>Detect text from your picture</Text>
+            </View>
           </View>
-          <View style={styles.cardTextContainer}>
-            <Text style={styles.title}>Face Detection</Text>
-            <Text>Maybe your face not allegeable</Text>
+        </CustomButton>
+        <CustomButton
+          onPress={() => {
+            props.navigation.navigate("Upload");
+          }}
+        >
+          <View style={styles.buttonContainer}>
+            <View style={styles.cardIconContainer}>
+              <MaterialCommunityIcons
+                name="camera-enhance-outline"
+                size={30}
+                color="black"
+              />
+            </View>
+            <View style={styles.cardTextContainer}>
+              <Text style={styles.title}>Upload image</Text>
+              <Text>Don't forget to send your friend number</Text>
+            </View>
           </View>
-        </View>
-      </CustomButton>
-      <CustomButton
-        onPress={() => {
-          props.navigation.navigate("Text");
-        }}
-      >
-        <View style={styles.buttonContainer}>
-          <View style={styles.cardIconContainer}>
-            <MaterialCommunityIcons
-              name="text-subject"
-              size={30}
-              color="black"
-            />
+        </CustomButton>
+        <CustomButton
+          onPress={() => {
+            props.navigation.navigate("DigiSign");
+          }}
+        >
+          <View style={styles.buttonContainer}>
+            <View style={styles.cardIconContainer}>
+              <FontAwesome5 name="signature" size={30} color="black" />
+            </View>
+            <View style={styles.cardTextContainer}>
+              <Text style={styles.title}>Digital Signature</Text>
+              <Text>I don't know the best practice to use this feature</Text>
+            </View>
           </View>
-          <View style={styles.cardTextContainer}>
-            <Text style={styles.title}>Text Detection</Text>
-            <Text>Detect text from your picture</Text>
+        </CustomButton>
+        <CustomButton
+          onPress={() => {
+            props.navigation.navigate("Maps");
+          }}
+        >
+          <View style={styles.buttonContainer}>
+            <View style={styles.cardIconContainer}>
+              <Feather name="map-pin" size={30} color="black" />
+            </View>
+            <View style={styles.cardTextContainer}>
+              <Text style={styles.title}>Maps</Text>
+              <Text>Linking to google maps or apple maps</Text>
+            </View>
           </View>
-        </View>
-      </CustomButton>
-      <CustomButton
-        onPress={() => {
-          props.navigation.navigate("Upload");
-        }}
-      >
-        <View style={styles.buttonContainer}>
-          <View style={styles.cardIconContainer}>
-            <MaterialCommunityIcons
-              name="camera-enhance-outline"
-              size={30}
-              color="black"
-            />
+        </CustomButton>
+        <CustomButton
+          onPress={() => {
+            props.navigation.navigate("Pdf");
+          }}
+        >
+          <View style={styles.buttonContainer}>
+            <View style={styles.cardIconContainer}>
+              <MaterialCommunityIcons
+                name="file-document-box-outline"
+                size={30}
+                color="black"
+              />
+            </View>
+            <View style={styles.cardTextContainer}>
+              <Text style={styles.title}>PDF</Text>
+              <Text>Open and downloads pdf</Text>
+            </View>
           </View>
-          <View style={styles.cardTextContainer}>
-            <Text style={styles.title}>Upload image</Text>
-            <Text>Don't forget to send your friend number</Text>
-          </View>
-        </View>
-      </CustomButton>
-      <CustomButton
-        onPress={() => {
-          props.navigation.navigate("DigiSign");
-        }}
-      >
-        <View style={styles.buttonContainer}>
-          <View style={styles.cardIconContainer}>
-            <FontAwesome5 name="signature" size={30} color="black" />
-          </View>
-          <View style={styles.cardTextContainer}>
-            <Text style={styles.title}>Digital Signature</Text>
-            <Text>I don't know the best practice to use this feature</Text>
-          </View>
-        </View>
-      </CustomButton>
-      <CustomButton
-        onPress={() => {
-          props.navigation.navigate("Maps");
-        }}
-      >
-        <View style={styles.buttonContainer}>
-          <View style={styles.cardIconContainer}>
-            <Feather name="map-pin" size={30} color="black" />
-          </View>
-          <View style={styles.cardTextContainer}>
-            <Text style={styles.title}>Maps</Text>
-            <Text>Linking to google maps or apple maps</Text>
-          </View>
-        </View>
-      </CustomButton>
+        </CustomButton>
+      </ScrollView>
     </CustomSafeArea>
   );
 };
@@ -120,8 +141,9 @@ const HomeScreen = (props) => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-  screen: {
-    padding: 20,
+  scrollView: {
+    paddingTop: 10,
+    flex: 1,
   },
   buttonContainer: {
     padding: 15,
@@ -129,7 +151,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     flexDirection: "row",
     alignItems: "center",
-    width: "100%",
+    width: "90%",
+    alignSelf: "center",
     backgroundColor: "white",
     shadowColor: "#000",
     shadowOffset: {
