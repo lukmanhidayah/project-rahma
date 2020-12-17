@@ -6758,6 +6758,11 @@ react-native-camera@^3.40.0:
   dependencies:
     prop-types "^15.6.2"
 
+react-native-easy-downloader@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-easy-downloader/-/react-native-easy-downloader-0.1.0.tgz#fc8b602786e16b26c732704c379a63f92d82532c"
+  integrity sha512-yfqbRNDJzo2q0ovQ5FqHDQABam2kqjgzYs5iZ4FInCoPdLU4ET9C2zgp/8BQWMKNSgsvanbmGs4P3mBdVp51qw==
+
 react-native-gesture-handler@~1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.7.0.tgz#0ef74a5ba836832e497dc49eb1ce58baa6c617e5"

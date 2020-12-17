@@ -6,11 +6,54 @@ import {
   ActivityIndicator,
   TouchableOpacity,
   Text,
+  ToastAndroid,
 } from "react-native";
 import Pdf from "react-native-pdf";
 import { MaterialIcons } from "@expo/vector-icons";
+import RNDM from "react-native-easy-downloader";
 
-const PdfScreen = () => {
+const PdfScreen = (props) => {
+  const onDownloadPdf = () => {
+    RNDM.download({
+      url: "http://www.africau.edu/images/default/sample.pdf",
+      savePath: RNDM.DirDownload + "/" + "sample.pdf",
+      title: "sample",
+    })
+      .then((res) => {
+        if (res) {
+          //   Toast.show("Download Berhasil.");
+          console.log(res);
+          ToastAndroid.showWithGravityAndOffset(
+            "Download success",
+            ToastAndroid.LONG,
+            ToastAndroid.BOTTOM,
+            25,
+            50
+          );
+
+          //   this.props.navigation.setParams({
+          //     numProgress: 1,
+          //   });
+        }
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+          ToastAndroid.showWithGravityAndOffset(
+            "Download success",
+            ToastAndroid.LONG,
+            ToastAndroid.BOTTOM,
+            25,
+            50
+          );
+          //   Toast.show("Download Gagal.");
+          //   this.props.navigation.setParams({
+          //     numProgress: 1,
+          //   });
+        }
+      });
+  };
+
   return (
     <View style={styles.container}>
       <Pdf
@@ -28,7 +71,7 @@ const PdfScreen = () => {
         style={styles.pdf}
       />
       <View style={styles.containerButton}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onDownloadPdf}>
           <View style={styles.contentButton}>
             <MaterialIcons name="file-download" size={24} color="white" />
           </View>
