@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Dimensions,
@@ -11,8 +11,11 @@ import {
 import Pdf from "react-native-pdf";
 import { MaterialIcons } from "@expo/vector-icons";
 import RNDM from "react-native-easy-downloader";
+import * as FileSystem from "expo-file-system";
 
 const PdfScreen = (props) => {
+  const [progress, setProgress] = useState(0);
+
   const onDownloadPdf = () => {
     RNDM.download({
       url: "http://www.africau.edu/images/default/sample.pdf",
@@ -54,9 +57,33 @@ const PdfScreen = (props) => {
       });
   };
 
+  const downloadWithFileSystem = async () => {
+    try {
+      const { uri } = await downloadResumable.downloadAsync();
+      console.log("Finished downloading to ", uri);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  const callback = (downloadProgress) => {
+    const progress =
+      downloadProgress.totalBytesWritten /
+      downloadProgress.totalBytesExpectedToWrite;
+    setProgress(progress);
+  };
+
+  const downloadResumable = FileSystem.createDownloadResumable(
+    "http://techslides.com/demos/sample-videos/small.mp4",
+    FileSystem.documentDirectory + "small.mp4",
+    {},
+    callback
+  );
+
   return (
     <View style={styles.container}>
-      <Pdf
+      <Text>Download PDF</Text>
+      {/* <Pdf
         activityIndicator={<ActivityIndicator size="large" color="#00ff00" />}
         source={{ uri: "http://www.africau.edu/images/default/sample.pdf" }}
         // onLoadComplete={(numberOfPages, filePath) => {
@@ -72,6 +99,14 @@ const PdfScreen = (props) => {
       />
       <View style={styles.containerButton}>
         <TouchableOpacity onPress={onDownloadPdf}>
+          <View style={styles.contentButton}>
+            <MaterialIcons name="file-download" size={24} color="white" />
+          </View>
+        </TouchableOpacity>
+      </View> */}
+
+      <View style={styles.containerButton}>
+        <TouchableOpacity onPress={downloadWithFileSystem}>
           <View style={styles.contentButton}>
             <MaterialIcons name="file-download" size={24} color="white" />
           </View>
